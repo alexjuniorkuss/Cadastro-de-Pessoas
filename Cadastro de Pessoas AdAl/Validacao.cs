@@ -89,7 +89,7 @@ namespace Cadastro_de_Pessoas_AdAl
                     {
                         Console.WriteLine("Data Inválida! Digite Novamente:");
                         t = true;
-                    }
+                     }
                 }
                 catch (Exception)
                 {
@@ -97,8 +97,15 @@ namespace Cadastro_de_Pessoas_AdAl
                     t = true;
                 }
             }
-               
             return DataUser;
+        }
+        public string Cpf(int tamanho)
+        {
+            string docCpf = Console.ReadLine().Trim();
+
+
+            if (tamanho == )
+            return docCpf;
         }
 
     }

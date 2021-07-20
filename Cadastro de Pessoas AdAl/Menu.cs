@@ -61,14 +61,14 @@ namespace Cadastro_de_Pessoas_AdAl
                     }
                 case 1:
                     {
-                        reg.RegistroPF(PessoaFisica);
+                        reg.CreatePF(PessoaFisica);
                         BodyMain();
                         Choise();
                         break;
                     }
                 case 2:
                     {
-                        reg.RegistroPJ(PessoaJuridica);
+                        reg.CreatePJ(PessoaJuridica);
                         BodyMain();
                         Choise();
                         break;

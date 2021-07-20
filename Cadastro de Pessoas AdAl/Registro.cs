@@ -14,21 +14,16 @@ namespace Cadastro_de_Pessoas_AdAl
         //public string Description = string.Empty;
         Validacao valida = new Validacao();
        
-        public void RegistroPF(List<PessoaFisica> pessoaFisicas)
+        public void CreatePF(List<PessoaFisica> pessoaFisicas)
         {
             string resp;
             do
             {
                 Console.WriteLine("\t\t\t\t\t ##** CADASTRO DE PESSOA FISICA* ##*");
-                Console.Write("Nome:");
-                string nome = valida.IssNotNull();
-                Console.Write("Data Nascimento:");
-                DateTime data = valida.ValidaData();
-                Console.Write("CPF:");
-                string cpf = valida. IssNotNull();
-                Console.Write("RG:");
-                string rg = valida.IssNotNull();
-                Endereco end = new Endereco();
+                string nome, cpf, rg;
+                DateTime data;
+                Endereco end;
+                CadastroUpdate(out nome, out data, out cpf, out rg, out end);
                 int Id = pessoaFisicas.Count() + 1;
 
                 Menu.PessoaFisica.Add(new PessoaFisica(Id, nome, data, end, cpf, rg));
@@ -47,7 +42,21 @@ namespace Cadastro_de_Pessoas_AdAl
             Menu.BodyMain();
             Menu.Choise();
         }
-        public void RegistroPJ(List<PessoaJuridica> pessoaJuridicas)
+
+        private void CadastroUpdate(out string nome, out DateTime data, out string cpf, out string rg, out Endereco end)
+        {
+            Console.Write("Nome:");
+            nome = valida.IssNotNull();
+            Console.Write("Data Nascimento:");
+            data = valida.ValidaData();
+            Console.Write("CPF:");
+            cpf = valida.IssNotNull();
+            Console.Write("RG:");
+            rg = valida.IssNotNull();
+            end = new Endereco();
+        }
+
+        public void CreatePJ(List<PessoaJuridica> pessoaJuridicas)
         {
             string resp;
             do
@@ -92,6 +101,37 @@ namespace Cadastro_de_Pessoas_AdAl
                 Console.WriteLine($" Empresa:\n ID: {empresa.Id} - {empresa.Nome} -  { empresa.Data.ToShortDateString()}-  { empresa.End}-  { empresa.CNPJ}-  { empresa.IE}");
             }
         }
+        public void UptadePF(List<PessoaFisica> pessoaFisica)
+        {
+            foreach (PessoaFisica pessoa in pessoaFisica)
+            {
+                Console.WriteLine($"Id: {pessoa.Id} \t Nome: {pessoa.Nome} Nascimento: {pessoa.Data}");
+            }
+
+
+
+
+
+
+
+
+            //Console.WriteLine("\nDigite a Id da Pessoa Física que deseja alterar");
+            //int id = Convert.ToInt32(Console.ReadLine());
+            //PessoaFisica pf = new PessoaFisica();
+            //foreach (var pessoa in pessoaFisica)
+            //{
+            //    if (pessoa.Id.Equals(id))
+            //    {
+            //        pf = pessoa;
+            //        break;
+            //    }
+                
+            //}
+
+
+
+        }
+
        
     }
 }

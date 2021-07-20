@@ -19,6 +19,10 @@ namespace Cadastro_de_Pessoas_AdAl
             this.Nome = nome; 
             this.RG = rg;
         }
+        public PessoaFisica()
+        {
+
+        }
         public override bool Equals(object pessoaFisica)
         {
             return this.CPF.Equals(((PessoaFisica)pessoaFisica).CPF);
