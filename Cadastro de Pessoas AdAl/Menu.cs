@@ -17,36 +17,15 @@ namespace Cadastro_de_Pessoas_AdAl
         }
         public static void BodyMain()
         {
-            string TamanhoTela;
             Console.Clear();
-            TamanhoTela = Cadastro_de_Pessoas_AdAl.ModificaTexto.CenterText("______________________________________________________________________________________");
-            Console.Write(TamanhoTela);
-            TamanhoTela = Cadastro_de_Pessoas_AdAl.ModificaTexto.CenterText("|                                                                                    |");
-            Console.Write(TamanhoTela);
-            TamanhoTela = Cadastro_de_Pessoas_AdAl.ModificaTexto.CenterText("|                                  © HAVAN LABS  - 2021                              |");
-            Console.Write(TamanhoTela);
-            TamanhoTela = Cadastro_de_Pessoas_AdAl.ModificaTexto.CenterText("|                                                                                    |");
-            Console.Write(TamanhoTela);
-            TamanhoTela = Cadastro_de_Pessoas_AdAl.ModificaTexto.CenterText("|____________________________________________________________________________________|");
-            Console.Write(TamanhoTela);
-            TamanhoTela = Cadastro_de_Pessoas_AdAl.ModificaTexto.CenterText("______________________________________________________________________________________");
-            Console.Write(TamanhoTela);
-            TamanhoTela = Cadastro_de_Pessoas_AdAl.ModificaTexto.CenterText("| [1] - Cadastrar Pessoa Física                                                      |");
-            Console.Write(TamanhoTela);
-            TamanhoTela = Cadastro_de_Pessoas_AdAl.ModificaTexto.CenterText("| [2] - Cadastrar Pessoa Jurídica                                                    |");
-            Console.Write(TamanhoTela);
-            TamanhoTela = Cadastro_de_Pessoas_AdAl.ModificaTexto.CenterText("|____________________________________________________________________________________|");
-            Console.Write(TamanhoTela);
-            TamanhoTela = Cadastro_de_Pessoas_AdAl.ModificaTexto.CenterText("______________________________________________________________________________________");
-            Console.Write(TamanhoTela);
-            TamanhoTela = Cadastro_de_Pessoas_AdAl.ModificaTexto.CenterText("| [3] - Listagem de Pessoas Física                                                   |");
-            Console.Write(TamanhoTela);
-            TamanhoTela = Cadastro_de_Pessoas_AdAl.ModificaTexto.CenterText("| [4] - Listagem de Pessoas Jurídicas                                                |");
-            Console.Write(TamanhoTela);
-            TamanhoTela = Cadastro_de_Pessoas_AdAl.ModificaTexto.CenterText("| [0] - Sair do Programa                                                             |");
-            Console.Write(TamanhoTela);
-            TamanhoTela = Cadastro_de_Pessoas_AdAl.ModificaTexto.CenterText("|____________________________________________________________________________________|");
-            Console.Write(TamanhoTela);
+            Console.WriteLine("______________________________________________________________________________________");
+            Console.WriteLine("|                                  © HAVAN LABS  - 2021                              |");
+            Console.WriteLine("| [1] - Cadastrar Pessoa Física                                                      |");
+            Console.WriteLine("| [2] - Cadastrar Pessoa Jurídica                                                    |");
+            Console.WriteLine("| [3] - Listagem de Pessoas Física                                                   |");
+            Console.WriteLine("| [4] - Listagem de Pessoas Jurídicas                                                |");
+            Console.WriteLine("| [0] - Sair do Programa                                                             |");
+            Console.WriteLine("|____________________________________________________________________________________|");
         }
         public static void Choise()
         {
@@ -54,7 +33,7 @@ namespace Cadastro_de_Pessoas_AdAl
             Registro reg = new Registro();
             do
             {
-                Console.WriteLine("Digite uma das opções acima:");
+                Console.Write("Digite uma das opções acima:");
                 try
                 {
                     choise = Int32.Parse(Console.ReadLine());
@@ -67,7 +46,7 @@ namespace Cadastro_de_Pessoas_AdAl
                 }
                 catch (FormatException)
                 {
-                    Console.WriteLine("Numero Invalido! Digite um Número Válido:");
+                    Console.Write("Numero Invalido! Digite um Número Válido:");
                 }
             } while (choise < 0 || choise > 4);
             Console.Clear();

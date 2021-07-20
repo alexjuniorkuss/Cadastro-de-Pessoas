@@ -12,29 +12,31 @@ namespace Cadastro_de_Pessoas_AdAl
         //public string name = string.Empty;
         //public decimal value = 0;
         //public string Description = string.Empty;
+        Validacao valida = new Validacao();
        
         public void RegistroPF(List<PessoaFisica> pessoaFisicas)
         {
             string resp;
             do
             {
-                Console.WriteLine("Nome:");
-                string nome = Validacao.IssNotNull();
-                Console.WriteLine("Data Nascimento:");
-                DateTime data = Convert.ToDateTime(Console.ReadLine());
-                Console.WriteLine("CPF:");
-                string cpf = Validacao.IssNotNull();
-                Console.WriteLine("RG:");
-                string rg = Validacao.IssNotNull();
+                Console.WriteLine("\t\t\t\t\t ##** CADASTRO DE PESSOA FISICA* ##*");
+                Console.Write("Nome:");
+                string nome = valida.IssNotNull();
+                Console.Write("Data Nascimento:");
+                DateTime data = valida.ValidaData();
+                Console.Write("CPF:");
+                string cpf = valida. IssNotNull();
+                Console.Write("RG:");
+                string rg = valida.IssNotNull();
                 Endereco end = new Endereco();
                 int Id = pessoaFisicas.Count() + 1;
 
                 Menu.PessoaFisica.Add(new PessoaFisica(Id, nome, data, end, cpf, rg));
 
-                Console.WriteLine("Você deseja cadastrar uma nova Pessoa Física?");
+                Console.Write("Você deseja cadastrar uma nova Pessoa Física?");
                 do
                 {
-                    resp = Validacao.IssNotNull();
+                    resp = valida.IssNotNull();
                     if (resp != "n" && resp != "s")
                     {
                         ModificaTexto.ColorRed("Invalid Answer! Type Again:");
@@ -51,13 +53,13 @@ namespace Cadastro_de_Pessoas_AdAl
             do
             {
                 Console.WriteLine("Empresa:");
-                string nome = Validacao.IssNotNull();
+                string nome = valida.IssNotNull();
                 Console.WriteLine("Fundação:");
                 DateTime data = Convert.ToDateTime(Console.ReadLine());
                 Console.WriteLine("CNPJ:");
-                string cnpj = Validacao.IssNotNull();
+                string cnpj = valida.IssNotNull();
                 Console.WriteLine("Inscrição Estadual:");
-                string ie = Validacao.IssNotNull();
+                string ie = valida.IssNotNull();
                 Endereco end = new Endereco();
                 int Id = pessoaJuridicas.Count() + 1;
 
@@ -66,7 +68,7 @@ namespace Cadastro_de_Pessoas_AdAl
                 Console.WriteLine("Você deseja cadastrar uma nova Empresa?");
                 do
                 {
-                    resp = Validacao.IssNotNull();
+                    resp = valida.IssNotNull();
                     if (resp != "n" && resp != "s")
                     {
                         ModificaTexto.ColorRed("Invalid Answer! Type Again:");

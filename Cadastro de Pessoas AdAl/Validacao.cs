@@ -8,7 +8,7 @@ namespace Cadastro_de_Pessoas_AdAl
 {
     class Validacao
     {
-        public static string IssNotNull()
+        public string IssNotNull()
         {
             string texto = String.Empty;
             while (true)
@@ -74,9 +74,31 @@ namespace Cadastro_de_Pessoas_AdAl
             }
             return value;
         }
-        public void ValidaData()
-        { 
-        
+        public DateTime ValidaData()
+        {
+            DateTime DataHj = DateTime.Now;
+            DateTime DataUser = DateTime.Now;
+            bool t = true;
+            while (t == true)
+            {
+                try
+                {
+                    DataUser = Convert.ToDateTime(Console.ReadLine());
+                    t = false;
+                    if (DataHj < DataUser)
+                    {
+                        Console.WriteLine("Data Inválida! Digite Novamente:");
+                        t = true;
+                    }
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Data Invalida");
+                    t = true;
+                }
+            }
+               
+            return DataUser;
         }
 
     }

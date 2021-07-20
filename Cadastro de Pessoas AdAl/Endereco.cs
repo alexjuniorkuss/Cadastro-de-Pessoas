@@ -13,18 +13,19 @@ namespace Cadastro_de_Pessoas_AdAl
         public string Complemento { get; set; }
         public string Bairro { get; set; }
         public string Cidade { get; set; }
+        Validacao valida = new Validacao();
         public Endereco()
         {
             Console.WriteLine("Digite a Rua:");
-            this.Rua = Validacao.IssNotNull();
+            this.Rua = valida.IssNotNull();
             Console.WriteLine("Digite o Número:");
-            this.Numero = Validacao.IssNotNull();
+            this.Numero = valida.IssNotNull();
             Console.WriteLine("Digite o Complemento:");
-            this.Complemento = Validacao.IssNotNull();
+            this.Complemento = valida.IssNotNull();
             Console.WriteLine("Digite o Bairro:");
-            this.Bairro = Validacao.IssNotNull();
+            this.Bairro = valida.IssNotNull();
             Console.WriteLine("Digite a Cidade:");
-            this.Cidade = Validacao.IssNotNull();
+            this.Cidade = valida.IssNotNull();
         }
         public override string ToString()
         {
