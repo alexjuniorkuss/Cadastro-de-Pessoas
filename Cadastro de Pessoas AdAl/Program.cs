@@ -8,8 +8,9 @@ namespace Cadastro_de_Pessoas_AdAl
 {
     class Program
     {
-        static void Main(string[] args)
-        {
-        }
+        //static void Main(string[] args)
+        //{
+
+        //}
     }
 }
