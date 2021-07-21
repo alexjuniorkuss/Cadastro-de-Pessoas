@@ -9,6 +9,8 @@ namespace Cadastro_de_Pessoas_AdAl
     public delegate void Operacoes();
     class Crud
     {
+        internal List<PessoaFisica> listPf = new List<PessoaFisica>();
+        protected List<PessoaJuridica> listPj = new List<PessoaJuridica>():
         protected Operacoes createOperation;
         protected Operacoes readOperation;
         protected Operacoes updateOperation;

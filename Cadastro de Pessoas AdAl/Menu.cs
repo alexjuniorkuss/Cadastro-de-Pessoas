@@ -31,6 +31,8 @@ namespace Cadastro_de_Pessoas_AdAl
         {
             int choise = 0;
             Registro reg = new Registro();
+            OperacaoPf opPf = new OperacaoPf();
+
             do
             {
                 Console.Write("Digite uma das opções acima:");
@@ -61,21 +63,23 @@ namespace Cadastro_de_Pessoas_AdAl
                     }
                 case 1:
                     {
-                        reg.RegistroPF();
+                        opPf.Create();
+                        //reg.RegistroPF();
                         BodyMain();
                         Choise();
                         break;
                     }
                 case 2:
                     {
-                        reg.RegistroPJ();
+                        opPf.Read();
+                        //reg.RegistroPJ();
                         BodyMain();
                         Choise();
                         break;
                     }
                 case 3:
                     {
-                        reg.ReadAllPF();
+                        opPf.Read();
                         Console.ReadLine();
                         BodyMain();
                         Choise();

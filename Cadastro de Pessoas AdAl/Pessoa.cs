@@ -16,5 +16,10 @@ namespace Cadastro_de_Pessoas_AdAl
         {
                 
         }
+
+        public override string ToString()
+        {
+            return $"ID: {this.Id} \nNome: {this.Nome} \nData: {this.Data} \n{this.End.ToString()} ";
+        }
     }
 }

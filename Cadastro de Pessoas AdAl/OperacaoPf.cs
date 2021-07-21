@@ -8,21 +8,18 @@ namespace Cadastro_de_Pessoas_AdAl
 {
     class OperacaoPf : Crud
     {
-        List<PessoaFisica> listPf = new List<PessoaFisica>();
-
+        
         public OperacaoPf()
         {
-            this.createOperation = Create;
+            this.createOperation = Cadastrar;
             this.readOperation = Listar;
-            this.updateOperation = Alterar;
-            this.deleteOperation = Deletar;
+            this.updateOperation = atualizar;
+            //this.deleteOperation = Deletar;
         }
+        
 
-        private void Create()
+        private void Cadastrar()
         {
-            Endereco endereco = new Endereco();
-            int id = 1;
-
             Console.WriteLine("----------------- Cadastro Pessoa Física -----------------");
 
             Console.Write("Digite seu Nome: ");
@@ -35,6 +32,7 @@ namespace Cadastro_de_Pessoas_AdAl
             string rg = Console.ReadLine();
             Console.Clear();
 
+            Endereco endereco = new Endereco();
             Console.WriteLine("----------------- Cadastro Pessoa Física -----------------");
             Console.WriteLine("----------------- Cadastro de Endereço -----------------");
             Console.Write("Digite sua Cidade: ");
@@ -48,10 +46,27 @@ namespace Cadastro_de_Pessoas_AdAl
             Console.Write("Complemento: ");
             endereco.Complemento = Console.ReadLine();
 
-            PessoaFisica pf = new PessoaFisica(id, nome, data, endereco, cpf, rg);
+            PessoaFisica pf = new PessoaFisica(listPf.Count+1, nome, data, endereco, cpf, rg);
             listPf.Add(pf);
-            id++;
+            
         }
+        private void Listar()
+        {
+            if (listPf.Count() > 0)
+            {
+                foreach (PessoaFisica pessoa in listPf)
+                {
+                    Console.WriteLine(pessoa.ToString());
+                }
+            }
+            else
+            {
+                Console.WriteLine("Nenhuma pessoa cadastro.");
+            }
+        }
+        private void atualizar()
+        {
 
+        }
     }
 }
