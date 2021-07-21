@@ -15,6 +15,7 @@ namespace Cadastro_de_Pessoas_AdAl
             BodyMain();
             Choise();
         }
+        //descom
         public static void BodyMain()
         {
             Console.Clear();
@@ -75,7 +76,6 @@ namespace Cadastro_de_Pessoas_AdAl
                     }
                 case 3:
                     {
-                      
                         reg.ReadAllPF(PessoaFisica);
                         Console.ReadLine();
                         BodyMain();
