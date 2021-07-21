@@ -37,7 +37,7 @@ namespace Cadastro_de_Pessoas_AdAl
                 try
                 {
                     choise = Int32.Parse(Console.ReadLine());
-                    if (choise < 0 || choise > 5)
+                    if (choise < 0 || choise > 6)
                     {
                         Console.Clear();
                         BodyMain();
@@ -48,7 +48,7 @@ namespace Cadastro_de_Pessoas_AdAl
                 {
                     Console.Write("Numero Invalido! Digite um Número Válido:");
                 }
-            } while (choise < 0 || choise > 5);
+            } while (choise < 0 || choise > 6);
             Console.Clear();
             switch (choise)
             {
@@ -93,6 +93,14 @@ namespace Cadastro_de_Pessoas_AdAl
                 case 5:
                     {
                         reg.UpdatePF();
+                        Console.ReadLine();
+                        BodyMain();
+                        Choise();
+                        break;
+                    }
+                case 6:
+                    {
+                        reg.DeletePF();
                         Console.ReadLine();
                         BodyMain();
                         Choise();

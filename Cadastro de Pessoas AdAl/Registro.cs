@@ -10,6 +10,7 @@ namespace Cadastro_de_Pessoas_AdAl
     {
         public static List<PessoaFisica> PessoaFisica = new List<PessoaFisica>();
         public static List<PessoaJuridica> PessoaJuridica = new List<PessoaJuridica>();
+        PessoaFisica pessoaPF = new PessoaFisica();
         Validacao valida = new Validacao();
        
         public void RegistroPF()
@@ -97,9 +98,14 @@ namespace Cadastro_de_Pessoas_AdAl
                 Console.WriteLine($"Empresa:\n ID: {empresa.Id} - {empresa.Nome} -  { empresa.Data.ToShortDateString()}-  { empresa.End}-  { empresa.CNPJ}-  { empresa.IE}");
             }
         }
-        public void UpdatePF() 
+        public void UpdatePF()
         {
-            PessoaFisica pessoaPF = new PessoaFisica();
+            UpdateDeletar();
+            CadastroUpdate(pessoaPF);
+        }
+
+        private void UpdateDeletar()
+        {
             ReadAllPF();
             Console.WriteLine("Digite um Id para Alteração:");
             int idPF = Convert.ToInt32(Console.ReadLine());
@@ -117,10 +123,12 @@ namespace Cadastro_de_Pessoas_AdAl
             {
                 Console.WriteLine("Não tem nada aqui");
             }
-            else 
-            {
-                CadastroUpdate(pessoaPF);
-            }
+        }
+
+        public void DeletePF()
+        {
+            UpdateDeletar();
+            PessoaFisica.Remove(pessoaPF);
         }
        
     }
