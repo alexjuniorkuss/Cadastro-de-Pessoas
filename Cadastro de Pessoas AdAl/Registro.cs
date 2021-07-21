@@ -128,7 +128,13 @@ namespace Cadastro_de_Pessoas_AdAl
         public void DeletePF()
         {
             UpdateDeletar();
-            PessoaFisica.Remove(pessoaPF);
+            Console.WriteLine("Deseja realmente excluir o registro?");
+            string resp = Validacao.IssNotNull();
+            if (resp == "s")
+            {
+                PessoaFisica.Remove(pessoaPF);
+                Console.WriteLine("Cadastro removido!");
+            }
         }
        
     }
