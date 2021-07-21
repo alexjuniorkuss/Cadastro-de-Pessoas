@@ -8,13 +8,12 @@ namespace Cadastro_de_Pessoas_AdAl
 {
     class Menu
     {
-        public static void Main(string[] args)
+        public void MontarMenu()
         {
-            BodyMain();
-            Choise();
+            Cabecalho();
+            Escolha();
         }
-        //descom
-        public static void BodyMain()
+        public void Cabecalho()
         {
             Console.Clear();
             Console.WriteLine("______________________________________________________________________________________");
@@ -27,20 +26,20 @@ namespace Cadastro_de_Pessoas_AdAl
             Console.WriteLine("| [0] - Sair do Programa                                                             |");
             Console.WriteLine("|____________________________________________________________________________________|");
         }
-        public static void Choise()
+        public void Escolha()
         {
-            int choise = 0;
+            int escolha = 0;
             Registro reg = new Registro();
             do
             {
                 Console.Write("Digite uma das opções acima:");
                 try
                 {
-                    choise = Int32.Parse(Console.ReadLine());
-                    if (choise < 0 || choise > 6)
+                    escolha = Int32.Parse(Console.ReadLine());
+                    if (escolha < 0 || escolha > 6)
                     {
                         Console.Clear();
-                        BodyMain();
+                        Cabecalho();
                         Console.WriteLine("Somente uma das opções listadas acima");
                     }
                 }
@@ -48,9 +47,9 @@ namespace Cadastro_de_Pessoas_AdAl
                 {
                     Console.Write("Numero Invalido! Digite um Número Válido:");
                 }
-            } while (choise < 0 || choise > 6);
+            } while (escolha < 0 || escolha > 6);
             Console.Clear();
-            switch (choise)
+            switch (escolha)
             {
                 case 0:
                     {
@@ -62,48 +61,41 @@ namespace Cadastro_de_Pessoas_AdAl
                 case 1:
                     {
                         reg.RegistroPF();
-                        BodyMain();
-                        Choise();
+                        MontarMenu();
                         break;
                     }
                 case 2:
                     {
                         reg.RegistroPJ();
-                        BodyMain();
-                        Choise();
+                        MontarMenu();
                         break;
                     }
                 case 3:
                     {
                         reg.ReadAllPF();
                         Console.ReadLine();
-                        BodyMain();
-                        Choise();
-
+                        MontarMenu();
                         break;
                     }
                 case 4:
                     {
                         reg.ReadAllPJ();
                         Console.ReadLine();
-                        BodyMain();
-                        Choise();
+                        MontarMenu();
                         break;
                     }
                 case 5:
                     {
                         reg.UpdatePF();
                         Console.ReadLine();
-                        BodyMain();
-                        Choise();
+                        MontarMenu();
                         break;
                     }
                 case 6:
                     {
                         reg.DeletePF();
                         Console.ReadLine();
-                        BodyMain();
-                        Choise();
+                        MontarMenu();
                         break;
                     }
 

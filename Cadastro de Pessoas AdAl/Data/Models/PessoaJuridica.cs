@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace Cadastro_de_Pessoas_AdAl
 {
-    class PessoaJuridica : Pessoa
+    class PessoaJuridica : BaseModel
     {
         public string CNPJ { get; set; }
         public string IE { get; set; }
-        public PessoaJuridica(int id, string nome, DateTime data, Endereco end, string cnpj, string ie)
+        public PessoaJuridica(int id,string nome,DateTime data,string cnpj,string ie,Endereco end)
         {
             this.Id = id;
-            this.Data = data;
-            this.End = end;
-            this.CNPJ = cnpj;
             this.Nome = nome;
+            this.Data = data;
+            this.CNPJ = cnpj;
             this.IE = ie;
+            this.End = end;
         }
         public PessoaJuridica()
         {

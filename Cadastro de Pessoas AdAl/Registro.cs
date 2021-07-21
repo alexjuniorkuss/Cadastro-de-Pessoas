@@ -10,9 +10,13 @@ namespace Cadastro_de_Pessoas_AdAl
     {
         public static List<PessoaFisica> PessoaFisica = new List<PessoaFisica>();
         public static List<PessoaJuridica> PessoaJuridica = new List<PessoaJuridica>();
+        Menu menu;
         PessoaFisica pessoaPF = new PessoaFisica();
         Validacao valida = new Validacao();
-       
+        public Registro()
+        {
+            menu = new Menu();
+        }
         public void RegistroPF()
         {
             string resp;
@@ -35,8 +39,7 @@ namespace Cadastro_de_Pessoas_AdAl
                 } while (resp != "n" && resp != "s");
 
             } while (resp == "s");
-            Menu.BodyMain();
-            Menu.Choise();
+            menu.MontarMenu();
         }
 
         private static void CadastroUpdate(PessoaFisica pessoa)
@@ -67,6 +70,7 @@ namespace Cadastro_de_Pessoas_AdAl
                 string ie = Validacao.IssNotNull();
                 Endereco end = new Endereco();
                 int Id = PessoaJuridica.Count() + 1;
+                
 
                 PessoaJuridica.Add(new PessoaJuridica(Id, nome, data, end, cnpj, ie));
 

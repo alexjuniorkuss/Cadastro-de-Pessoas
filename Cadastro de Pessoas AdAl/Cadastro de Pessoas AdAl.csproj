@@ -43,12 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Endereco.cs" />
+    <Compile Include="Data\Models\Endereco.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="ModificaTexto.cs" />
-    <Compile Include="Pessoa.cs" />
-    <Compile Include="PessoaFisica.cs" />
-    <Compile Include="PessoaJuridica.cs" />
+    <Compile Include="Data\Models\BaseModel.cs" />
+    <Compile Include="Data\Models\PessoaFisica.cs" />
+    <Compile Include="Data\Models\PessoaJuridica.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registro.cs" />
@@ -56,9 +56,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="xl.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
