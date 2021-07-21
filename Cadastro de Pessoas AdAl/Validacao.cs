@@ -8,7 +8,7 @@ namespace Cadastro_de_Pessoas_AdAl
 {
     class Validacao
     {
-        public string IssNotNull()
+        public static string IssNotNull()
         {
             string texto = String.Empty;
             while (true)
@@ -74,7 +74,7 @@ namespace Cadastro_de_Pessoas_AdAl
             }
             return value;
         }
-        public DateTime ValidaData()
+        public static DateTime ValidaData()
         {
             DateTime DataHj = DateTime.Now;
             DateTime DataUser = DateTime.Now;

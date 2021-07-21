@@ -90,6 +90,15 @@ namespace Cadastro_de_Pessoas_AdAl
                         Choise();
                         break;
                     }
+                case 5:
+                    {
+                        reg.UpdatePF();
+                        Console.ReadLine();
+                        BodyMain();
+                        Choise();
+                        break;
+                    }
+
                 default:
                     Console.WriteLine("Erro Desconhecido Consulte o Desenvolvedor do Software!");
                     break;

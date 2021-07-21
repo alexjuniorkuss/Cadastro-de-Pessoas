@@ -17,15 +17,15 @@ namespace Cadastro_de_Pessoas_AdAl
         public Endereco()
         {
             Console.WriteLine("Digite a Rua:");
-            this.Rua = valida.IssNotNull();
+            this.Rua = Validacao.IssNotNull();
             Console.WriteLine("Digite o Número:");
-            this.Numero = valida.IssNotNull();
+            this.Numero = Validacao.IssNotNull();
             Console.WriteLine("Digite o Complemento:");
-            this.Complemento = valida.IssNotNull();
+            this.Complemento = Validacao.IssNotNull();
             Console.WriteLine("Digite o Bairro:");
-            this.Bairro = valida.IssNotNull();
+            this.Bairro = Validacao.IssNotNull();
             Console.WriteLine("Digite a Cidade:");
-            this.Cidade = valida.IssNotNull();
+            this.Cidade = Validacao.IssNotNull();
         }
         public override string ToString()
         {

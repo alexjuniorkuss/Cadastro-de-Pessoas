@@ -8,10 +8,6 @@ namespace Cadastro_de_Pessoas_AdAl
 {
     class Registro
     {
-        //public int Id = 0;
-        //public string name = string.Empty;
-        //public decimal value = 0;
-        //public string Description = string.Empty;
         public static List<PessoaFisica> PessoaFisica = new List<PessoaFisica>();
         public static List<PessoaJuridica> PessoaJuridica = new List<PessoaJuridica>();
         Validacao valida = new Validacao();
@@ -21,24 +17,16 @@ namespace Cadastro_de_Pessoas_AdAl
             string resp;
             do
             {
+
                 Console.WriteLine("\t\t\t\t\t ##** CADASTRO DE PESSOA FISICA* ##*");
-                Console.Write("Nome:");
-                string nome = valida.IssNotNull();
-                Console.Write("Data Nascimento:");
-                DateTime data = valida.ValidaData();
-                Console.Write("CPF:");
-                string cpf = valida. IssNotNull();
-                Console.Write("RG:");
-                string rg = valida.IssNotNull();
-                Endereco end = new Endereco();
-                int Id = PessoaFisica.Count() + 1;
-
-                PessoaFisica.Add(new PessoaFisica(Id, nome, data, end, cpf, rg));
-
+                PessoaFisica pessoa = new PessoaFisica();
+                CadastroUpdate(pessoa);
+                pessoa.Id = PessoaFisica.Count() + 1;
+                PessoaFisica.Add(pessoa);
                 Console.Write("Você deseja cadastrar uma nova Pessoa Física?");
                 do
                 {
-                    resp = valida.IssNotNull();
+                    resp = Validacao.IssNotNull();
                     if (resp != "n" && resp != "s")
                     {
                         ModificaTexto.ColorRed("Invalid Answer! Type Again:");
@@ -49,19 +37,33 @@ namespace Cadastro_de_Pessoas_AdAl
             Menu.BodyMain();
             Menu.Choise();
         }
+
+        private static void CadastroUpdate(PessoaFisica pessoa)
+        {
+            Console.Write("Nome:");
+            pessoa.Nome = Validacao.IssNotNull();
+            Console.Write("Data Nascimento:");
+            pessoa.Data = Validacao.ValidaData();
+            Console.Write("CPF:");
+            pessoa.CPF = Validacao.IssNotNull();
+            Console.Write("RG:");
+            pessoa.RG = Validacao.IssNotNull();
+            pessoa.End = new Endereco();
+        }
+
         public void RegistroPJ()
         {
             string resp;
             do
             {
                 Console.WriteLine("Empresa:");
-                string nome = valida.IssNotNull();
+                string nome = Validacao.IssNotNull();
                 Console.WriteLine("Fundação:");
                 DateTime data = Convert.ToDateTime(Console.ReadLine());
                 Console.WriteLine("CNPJ:");
-                string cnpj = valida.IssNotNull();
+                string cnpj = Validacao.IssNotNull();
                 Console.WriteLine("Inscrição Estadual:");
-                string ie = valida.IssNotNull();
+                string ie = Validacao.IssNotNull();
                 Endereco end = new Endereco();
                 int Id = PessoaJuridica.Count() + 1;
 
@@ -70,7 +72,7 @@ namespace Cadastro_de_Pessoas_AdAl
                 Console.WriteLine("Você deseja cadastrar uma nova Empresa?");
                 do
                 {
-                    resp = valida.IssNotNull();
+                    resp = Validacao.IssNotNull();
                     if (resp != "n" && resp != "s")
                     {
                         ModificaTexto.ColorRed("Invalid Answer! Type Again:");
@@ -84,7 +86,7 @@ namespace Cadastro_de_Pessoas_AdAl
         {
             foreach (PessoaFisica pessoa in PessoaFisica)
             {
-                Console.WriteLine($"ID:     {pessoa.Id},     Nome: {pessoa.Nome}, Nascimento: { pessoa.Data.ToShortDateString()}, CPF{ pessoa.CPF}, RG: { pessoa.RG}\n" +
+                Console.WriteLine($"ID:  {pessoa.Id},     Nome: {pessoa.Nome}, Nascimento: { pessoa.Data.ToShortDateString()}, CPF{ pessoa.CPF}, RG: { pessoa.RG}\n" +
                                   $"{ pessoa.End}");
             }
         }
@@ -93,6 +95,31 @@ namespace Cadastro_de_Pessoas_AdAl
             foreach (PessoaJuridica empresa in PessoaJuridica)
             {
                 Console.WriteLine($"Empresa:\n ID: {empresa.Id} - {empresa.Nome} -  { empresa.Data.ToShortDateString()}-  { empresa.End}-  { empresa.CNPJ}-  { empresa.IE}");
+            }
+        }
+        public void UpdatePF() 
+        {
+            PessoaFisica pessoaPF = new PessoaFisica();
+            ReadAllPF();
+            Console.WriteLine("Digite um Id para Alteração:");
+            int idPF = Convert.ToInt32(Console.ReadLine());
+            foreach (PessoaFisica pessoa in PessoaFisica)
+            {
+                if (idPF.Equals(pessoa.Id))
+                {
+                    pessoaPF = pessoa;
+                    Console.WriteLine("Id Localizada!");
+                    break;
+                }
+                Console.WriteLine("Id não localizada!");
+            }
+            if (pessoaPF.Id == 0)
+            {
+                Console.WriteLine("Não tem nada aqui");
+            }
+            else 
+            {
+                CadastroUpdate(pessoaPF);
             }
         }
        
