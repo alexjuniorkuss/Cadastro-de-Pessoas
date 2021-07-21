@@ -12,9 +12,11 @@ namespace Cadastro_de_Pessoas_AdAl
         //public string name = string.Empty;
         //public decimal value = 0;
         //public string Description = string.Empty;
+        public static List<PessoaFisica> PessoaFisica = new List<PessoaFisica>();
+        public static List<PessoaJuridica> PessoaJuridica = new List<PessoaJuridica>();
         Validacao valida = new Validacao();
        
-        public void RegistroPF(List<PessoaFisica> pessoaFisicas)
+        public void RegistroPF()
         {
             string resp;
             do
@@ -29,9 +31,9 @@ namespace Cadastro_de_Pessoas_AdAl
                 Console.Write("RG:");
                 string rg = valida.IssNotNull();
                 Endereco end = new Endereco();
-                int Id = pessoaFisicas.Count() + 1;
+                int Id = PessoaFisica.Count() + 1;
 
-                Menu.PessoaFisica.Add(new PessoaFisica(Id, nome, data, end, cpf, rg));
+                PessoaFisica.Add(new PessoaFisica(Id, nome, data, end, cpf, rg));
 
                 Console.Write("Você deseja cadastrar uma nova Pessoa Física?");
                 do
@@ -47,7 +49,7 @@ namespace Cadastro_de_Pessoas_AdAl
             Menu.BodyMain();
             Menu.Choise();
         }
-        public void RegistroPJ(List<PessoaJuridica> pessoaJuridicas)
+        public void RegistroPJ()
         {
             string resp;
             do
@@ -61,9 +63,9 @@ namespace Cadastro_de_Pessoas_AdAl
                 Console.WriteLine("Inscrição Estadual:");
                 string ie = valida.IssNotNull();
                 Endereco end = new Endereco();
-                int Id = pessoaJuridicas.Count() + 1;
+                int Id = PessoaJuridica.Count() + 1;
 
-                Menu.PessoaJuridica.Add(new PessoaJuridica(Id, nome, data, end, cnpj, ie));
+                PessoaJuridica.Add(new PessoaJuridica(Id, nome, data, end, cnpj, ie));
 
                 Console.WriteLine("Você deseja cadastrar uma nova Empresa?");
                 do
@@ -78,18 +80,19 @@ namespace Cadastro_de_Pessoas_AdAl
             } while (resp == "s");
             
         }
-        public void ReadAllPF(List<PessoaFisica> pessoaFisica)
+        public void ReadAllPF()
         {
-            foreach (PessoaFisica pessoa in pessoaFisica)
+            foreach (PessoaFisica pessoa in PessoaFisica)
             {
-                Console.WriteLine($" Nome:\n ID: {pessoa.Id} - {pessoa.Nome} -  { pessoa.Data.ToShortDateString()}-  { pessoa.End}-  { pessoa.CPF}-  { pessoa.RG}");
+                Console.WriteLine($"ID:     {pessoa.Id},     Nome: {pessoa.Nome}, Nascimento: { pessoa.Data.ToShortDateString()}, CPF{ pessoa.CPF}, RG: { pessoa.RG}\n" +
+                                  $"{ pessoa.End}");
             }
         }
-        public void ReadAllPJ(List<PessoaJuridica> pessoaJuridica)
+        public void ReadAllPJ()
         {
-            foreach (PessoaJuridica empresa in pessoaJuridica)
+            foreach (PessoaJuridica empresa in PessoaJuridica)
             {
-                Console.WriteLine($" Empresa:\n ID: {empresa.Id} - {empresa.Nome} -  { empresa.Data.ToShortDateString()}-  { empresa.End}-  { empresa.CNPJ}-  { empresa.IE}");
+                Console.WriteLine($"Empresa:\n ID: {empresa.Id} - {empresa.Nome} -  { empresa.Data.ToShortDateString()}-  { empresa.End}-  { empresa.CNPJ}-  { empresa.IE}");
             }
         }
        

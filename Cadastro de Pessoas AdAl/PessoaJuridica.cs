@@ -19,6 +19,10 @@ namespace Cadastro_de_Pessoas_AdAl
             this.Nome = nome;
             this.IE = ie;
         }
+        public PessoaJuridica()
+        {
+
+        }
         public override bool Equals(object pessoaJuridica)
         {
             return this.CNPJ.Equals(((PessoaJuridica)pessoaJuridica).CNPJ);

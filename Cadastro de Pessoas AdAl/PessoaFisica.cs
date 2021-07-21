@@ -10,6 +10,10 @@ namespace Cadastro_de_Pessoas_AdAl
     {
         public string CPF { get; set; }
         public string RG { get; set; }
+        public PessoaFisica()
+        {
+
+        }
         public PessoaFisica(int id, string nome, DateTime data, Endereco end, string cpf, string rg)
         {
             this.Id = id;

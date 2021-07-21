@@ -8,8 +8,6 @@ namespace Cadastro_de_Pessoas_AdAl
 {
     class Menu
     {
-        public static List<PessoaFisica> PessoaFisica = new List<PessoaFisica>();
-        public static List<PessoaJuridica> PessoaJuridica = new List<PessoaJuridica>();
         public static void Main(string[] args)
         {
             BodyMain();
@@ -25,6 +23,7 @@ namespace Cadastro_de_Pessoas_AdAl
             Console.WriteLine("| [2] - Cadastrar Pessoa Jurídica                                                    |");
             Console.WriteLine("| [3] - Listagem de Pessoas Física                                                   |");
             Console.WriteLine("| [4] - Listagem de Pessoas Jurídicas                                                |");
+            Console.WriteLine("| [5] - Editar PF                                                                    |");
             Console.WriteLine("| [0] - Sair do Programa                                                             |");
             Console.WriteLine("|____________________________________________________________________________________|");
         }
@@ -38,7 +37,7 @@ namespace Cadastro_de_Pessoas_AdAl
                 try
                 {
                     choise = Int32.Parse(Console.ReadLine());
-                    if (choise < 0 || choise > 4)
+                    if (choise < 0 || choise > 5)
                     {
                         Console.Clear();
                         BodyMain();
@@ -49,7 +48,7 @@ namespace Cadastro_de_Pessoas_AdAl
                 {
                     Console.Write("Numero Invalido! Digite um Número Válido:");
                 }
-            } while (choise < 0 || choise > 4);
+            } while (choise < 0 || choise > 5);
             Console.Clear();
             switch (choise)
             {
@@ -62,21 +61,21 @@ namespace Cadastro_de_Pessoas_AdAl
                     }
                 case 1:
                     {
-                        reg.RegistroPF(PessoaFisica);
+                        reg.RegistroPF();
                         BodyMain();
                         Choise();
                         break;
                     }
                 case 2:
                     {
-                        reg.RegistroPJ(PessoaJuridica);
+                        reg.RegistroPJ();
                         BodyMain();
                         Choise();
                         break;
                     }
                 case 3:
                     {
-                        reg.ReadAllPF(PessoaFisica);
+                        reg.ReadAllPF();
                         Console.ReadLine();
                         BodyMain();
                         Choise();
@@ -85,7 +84,7 @@ namespace Cadastro_de_Pessoas_AdAl
                     }
                 case 4:
                     {
-                        reg.ReadAllPJ(PessoaJuridica);
+                        reg.ReadAllPJ();
                         Console.ReadLine();
                         BodyMain();
                         Choise();

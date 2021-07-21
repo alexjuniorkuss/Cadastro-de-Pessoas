@@ -29,7 +29,7 @@ namespace Cadastro_de_Pessoas_AdAl
         }
         public override string ToString()
         {
-            return ($"Rua : {this.Rua} Numero : {this.Numero} -Complemento : {this.Complemento} -Bairro : {this.Bairro} Cidade : {this.Bairro}" );
+            return ($"Rua: {this.Rua}, Numero: {this.Numero}, {this.Bairro}, {this.Bairro}, {this.Cidade}  Complemento: {this.Complemento}" );
         }
     }
 
