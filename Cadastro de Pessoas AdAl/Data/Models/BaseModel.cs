@@ -12,5 +12,10 @@ namespace Cadastro_de_Pessoas_AdAl
         public string Nome { get; set; }
         public DateTime Data { get; set; }
         public Endereco End { get; set; }
+
+        public override string ToString()
+        {
+            return $"ID: {this.Id} \nNome: {this.Nome} \nData: {this.Data.ToShortDateString()} \n{this.End.ToString()} ";
+        }
     }
 }

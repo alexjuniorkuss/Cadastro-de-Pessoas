@@ -27,5 +27,9 @@ namespace Cadastro_de_Pessoas_AdAl
         {
             return this.CPF.Equals(((PessoaFisica)pessoaFisica).CPF);
         }
+        public override string ToString()
+        {
+            return $"{base.ToString()} \nRG: {this.RG} \nCPF:{this.CPF}";
+        }
     }
 }

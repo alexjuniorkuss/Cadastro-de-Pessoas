@@ -72,7 +72,7 @@ namespace Cadastro_de_Pessoas_AdAl
                 int Id = PessoaJuridica.Count() + 1;
                 
 
-                PessoaJuridica.Add(new PessoaJuridica(Id, nome, data, end, cnpj, ie));
+                PessoaJuridica.Add(new PessoaJuridica(Id, nome, data, cnpj, ie, end));
 
                 Console.WriteLine("Você deseja cadastrar uma nova Empresa?");
                 do

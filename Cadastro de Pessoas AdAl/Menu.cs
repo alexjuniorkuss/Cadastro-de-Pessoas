@@ -8,6 +8,11 @@ namespace Cadastro_de_Pessoas_AdAl
 {
     class Menu
     {
+        OperacaoPf opPf; 
+        public Menu()
+        {
+            opPf = new OperacaoPf();
+        }
         public void MontarMenu()
         {
             Cabecalho();
@@ -23,13 +28,13 @@ namespace Cadastro_de_Pessoas_AdAl
             Console.WriteLine("| [3] - Listagem de Pessoas Física                                                   |");
             Console.WriteLine("| [4] - Listagem de Pessoas Jurídicas                                                |");
             Console.WriteLine("| [5] - Editar PF                                                                    |");
+            Console.WriteLine("| [6] - Excluir PF                                                                   |");
             Console.WriteLine("| [0] - Sair do Programa                                                             |");
             Console.WriteLine("|____________________________________________________________________________________|");
         }
         public void Escolha()
         {
             int escolha = 0;
-            Registro reg = new Registro();
             do
             {
                 Console.Write("Digite uma das opções acima:");
@@ -60,40 +65,40 @@ namespace Cadastro_de_Pessoas_AdAl
                     }
                 case 1:
                     {
-                        reg.RegistroPF();
+                        opPf.Cadastrar();
                         MontarMenu();
                         break;
                     }
                 case 2:
                     {
-                        reg.RegistroPJ();
+                        //reg.RegistroPJ();
                         MontarMenu();
                         break;
                     }
                 case 3:
                     {
-                        reg.ReadAllPF();
+                        opPf.Listar();
                         Console.ReadLine();
                         MontarMenu();
                         break;
                     }
                 case 4:
                     {
-                        reg.ReadAllPJ();
+                        //reg.ReadAllPJ();
                         Console.ReadLine();
                         MontarMenu();
                         break;
                     }
                 case 5:
                     {
-                        reg.UpdatePF();
+                        opPf.Atualizar();
                         Console.ReadLine();
                         MontarMenu();
                         break;
                     }
                 case 6:
                     {
-                        reg.DeletePF();
+                        opPf.Deletar();
                         Console.ReadLine();
                         MontarMenu();
                         break;
