@@ -27,6 +27,9 @@ namespace Cadastro_de_Pessoas_AdAl
         {
             return this.CNPJ.Equals(((PessoaJuridica)pessoaJuridica).CNPJ);
         }
-
+        public override string ToString()
+        {
+            return $"{base.ToString()} \nCNPJ: {this.CNPJ} \nIE: {this.IE}";
+        }
     }
 }

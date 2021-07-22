@@ -8,10 +8,12 @@ namespace Cadastro_de_Pessoas_AdAl
 {
     class Menu
     {
-        OperacaoPf opPf; 
+        OperacaoPf opPf;
+        OperacaoPj opPj;
         public Menu()
         {
             opPf = new OperacaoPf();
+            opPj = new OperacaoPj();
         }
         public void MontarMenu()
         {
@@ -28,7 +30,9 @@ namespace Cadastro_de_Pessoas_AdAl
             Console.WriteLine("| [3] - Listagem de Pessoas Física                                                   |");
             Console.WriteLine("| [4] - Listagem de Pessoas Jurídicas                                                |");
             Console.WriteLine("| [5] - Editar PF                                                                    |");
-            Console.WriteLine("| [6] - Excluir PF                                                                   |");
+            Console.WriteLine("| [6] - Editar PJ                                                                    |");
+            Console.WriteLine("| [7] - Excluir PF                                                                   |");
+            Console.WriteLine("| [8] - Excluir PJ                                                                   |");
             Console.WriteLine("| [0] - Sair do Programa                                                             |");
             Console.WriteLine("|____________________________________________________________________________________|");
         }
@@ -41,7 +45,7 @@ namespace Cadastro_de_Pessoas_AdAl
                 try
                 {
                     escolha = Int32.Parse(Console.ReadLine());
-                    if (escolha < 0 || escolha > 6)
+                    if (escolha < 0 || escolha > 9)
                     {
                         Console.Clear();
                         Cabecalho();
@@ -52,7 +56,7 @@ namespace Cadastro_de_Pessoas_AdAl
                 {
                     Console.Write("Numero Invalido! Digite um Número Válido:");
                 }
-            } while (escolha < 0 || escolha > 6);
+            } while (escolha < 0 || escolha > 9);
             Console.Clear();
             switch (escolha)
             {
@@ -71,7 +75,7 @@ namespace Cadastro_de_Pessoas_AdAl
                     }
                 case 2:
                     {
-                        //reg.RegistroPJ();
+                        opPj.Cadastrar();
                         MontarMenu();
                         break;
                     }
@@ -84,7 +88,7 @@ namespace Cadastro_de_Pessoas_AdAl
                     }
                 case 4:
                     {
-                        //reg.ReadAllPJ();
+                        opPj.Listar();
                         Console.ReadLine();
                         MontarMenu();
                         break;
@@ -98,12 +102,25 @@ namespace Cadastro_de_Pessoas_AdAl
                     }
                 case 6:
                     {
+                        opPj.Atualizar();
+                        Console.ReadLine();
+                        MontarMenu();
+                        break;
+                    }
+                case 7:
+                    {
                         opPf.Deletar();
                         Console.ReadLine();
                         MontarMenu();
                         break;
                     }
-
+                case 8:
+                    {
+                        opPj.Deletar();
+                        Console.ReadLine();
+                        MontarMenu();
+                        break;
+                    }
                 default:
                     Console.WriteLine("Erro Desconhecido Consulte o Desenvolvedor do Software!");
                     break;
