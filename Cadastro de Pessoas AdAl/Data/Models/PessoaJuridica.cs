@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cadastro_de_Pessoas_AdAl
+namespace CadastroPessoas
 {
-    class PessoaJuridica : BaseModel
+    public class PessoaJuridica : BaseModel
     {
         public string CNPJ { get; set; }
         public string IE { get; set; }
@@ -27,9 +27,9 @@ namespace Cadastro_de_Pessoas_AdAl
         {
             return this.CNPJ.Equals(((PessoaJuridica)pessoaJuridica).CNPJ);
         }
-        public override string ToString()
-        {
-            return $"\n-------------------\n{base.ToString()} \nCNPJ: {this.CNPJ} \nIE: {this.IE}";
-        }
+        //public override string ToString()
+        //{
+        //    return $"\n-------------------\n{base.ToString()} \nCNPJ: {this.CNPJ} \nIE: {this.IE}";
+        //}
     }
 }

@@ -54,8 +54,6 @@
     <Compile Include="OperacaoPj.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registro.cs" />
-    <Compile Include="Validacao.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

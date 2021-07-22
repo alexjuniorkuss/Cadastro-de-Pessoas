@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cadastro_de_Pessoas_AdAl
+namespace CadastroPessoas
 {
     public delegate void Operacao();
     class Crud

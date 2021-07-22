@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cadastro_de_Pessoas_AdAl
+namespace CadastroPessoas
 {
-    class PessoaFisica : BaseModel
+    public class PessoaFisica : BaseModel
     {
         public string CPF { get; set; }
         public string RG { get; set; }
@@ -27,9 +27,9 @@ namespace Cadastro_de_Pessoas_AdAl
         {
             return this.CPF.Equals(((PessoaFisica)pessoaFisica).CPF);
         }
-        public override string ToString()
-        {
-            return $"\n-------------------\n{base.ToString()} \nRG: {this.RG} \nCPF:{this.CPF}";
-        }
+        //public override string ToString()
+        //{
+        //    return $"\n-------------------\n{base.ToString()} \nRG: {this.RG} \nCPF:{this.CPF}";
+        //}
     }
 }
