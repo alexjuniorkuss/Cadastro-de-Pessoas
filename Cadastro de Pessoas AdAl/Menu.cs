@@ -96,7 +96,7 @@ namespace Cadastro_de_Pessoas_AdAl
                     }
                 case 5:
                     {
-                        reg.UpdatePF();
+                        opPf.Update();
                         Console.ReadLine();
                         BodyMain();
                         Choise();
