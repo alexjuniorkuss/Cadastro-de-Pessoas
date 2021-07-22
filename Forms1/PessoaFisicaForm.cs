@@ -78,6 +78,14 @@ namespace Forms1
                 idEdicao =  pessoaF.Id;
                 CarregarCadastro(pessoaF);
             }
+            else if(indice == 1)
+            {
+                PessoaFisica pessoaF = this.ListaPf[e.RowIndex];
+                this.ListaPf.Remove(pessoaF);
+                MessageBox.Show("Removido com sucesso");
+                ListarCadastro();
+            }
+
         }
 
         
@@ -112,7 +120,6 @@ namespace Forms1
             this.tbCpf.Text = pessoaF.CPF;
             this.tbRg.Text = pessoaF.RG;
             
-
             this.tbRua.Text = pessoaF.End.Rua;
             this.tbNumero.Text = pessoaF.End.Numero.ToString();
             this.tbComplemento.Text = pessoaF.End.Complemento;
