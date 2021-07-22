@@ -29,7 +29,7 @@ namespace Cadastro_de_Pessoas_AdAl
         }
         public override string ToString()
         {
-            return $"{base.ToString()} \nCNPJ: {this.CNPJ} \nIE: {this.IE}";
+            return $"\n-------------------\n{base.ToString()} \nCNPJ: {this.CNPJ} \nIE: {this.IE}";
         }
     }
 }

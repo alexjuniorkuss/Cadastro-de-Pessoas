@@ -40,5 +40,30 @@ namespace Cadastro_de_Pessoas_AdAl
             // received the argument (text) and pass for the TextColor with the color red
             TextColor(text, ConsoleColor.Red);
         }
+        public static void ColorBlue(string text)
+        {
+            // received the argument (text) and pass for the TextColor with the color red
+            TextColor(text, ConsoleColor.Blue);
+        }
+        public static void ColorCyan(string text)
+        {
+            // received the argument (text) and pass for the TextColor with the color red
+            TextColor(text, ConsoleColor.Cyan);
+        }
+        public static void ColorGreen(string text)
+        {
+            // received the argument (text) and pass for the TextColor with the color red
+            TextColor(text, ConsoleColor.Green);
+        }
+        public static void ColorYellow(string text)
+        {
+            // received the argument (text) and pass for the TextColor with the color red
+            TextColor(text, ConsoleColor.Yellow);
+        }
+        public static void ColorMagenta(string text)
+        {
+            // received the argument (text) and pass for the TextColor with the color red
+            TextColor(text, ConsoleColor.Magenta);
+        }
     }
 }
