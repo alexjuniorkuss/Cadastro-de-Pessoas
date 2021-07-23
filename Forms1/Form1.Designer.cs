@@ -52,6 +52,7 @@ namespace Forms1
             this.btPj.TabIndex = 1;
             this.btPj.Text = "Cadastro Pessoa Jurídica";
             this.btPj.UseVisualStyleBackColor = true;
+            this.btPj.Click += new System.EventHandler(this.btPj_Click);
             // 
             // lbBemVindo
             // 

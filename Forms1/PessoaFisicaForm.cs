@@ -85,9 +85,7 @@ namespace Forms1
                 MessageBox.Show("Removido com sucesso");
                 ListarCadastro();
             }
-
         }
-
         
         private void LimparCadastro()
         {

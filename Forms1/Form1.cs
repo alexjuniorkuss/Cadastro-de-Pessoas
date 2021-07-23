@@ -22,5 +22,11 @@ namespace Forms1
             PessoaFisicaForm pessoaFform = new PessoaFisicaForm();
             pessoaFform.Show();
         }
+
+        private void btPj_Click(object sender, EventArgs e)
+        {
+            PessoaJuridicaForm pessoaJform = new PessoaJuridicaForm();
+            pessoaJform.Show();
+        }
     }
 }

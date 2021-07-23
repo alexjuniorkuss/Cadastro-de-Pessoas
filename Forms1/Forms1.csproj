@@ -59,6 +59,12 @@
     <Compile Include="PessoaFisicaForm.Designer.cs">
       <DependentUpon>PessoaFisicaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PessoaJuridicaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PessoaJuridicaForm.Designer.cs">
+      <DependentUpon>PessoaJuridicaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -66,6 +72,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PessoaFisicaForm.resx">
       <DependentUpon>PessoaFisicaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PessoaJuridicaForm.resx">
+      <DependentUpon>PessoaJuridicaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
